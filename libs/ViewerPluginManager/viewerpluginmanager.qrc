@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/ViewerPluginManager">
+        <file alias="presentation_icon">img/viewer.png</file>
+    </qresource>
+</RCC>

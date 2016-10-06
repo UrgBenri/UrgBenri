@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/PlayControlsWidget">
+        <file alias="pause">img/pause.png</file>
+        <file alias="start">img/start.png</file>
+        <file alias="stop">img/stop.png</file>
+    </qresource>
+</RCC>

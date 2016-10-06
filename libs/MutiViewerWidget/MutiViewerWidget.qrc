@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/MutiViewerWidget">
+        <file alias="left">img/arrow-left.png</file>
+        <file alias="right">img/arrow-right.png</file>
+    </qresource>
+</RCC>

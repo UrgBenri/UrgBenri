@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="load_icon">img/load.png</file>
+        <file alias="play_icon">img/start.png</file>
+        <file alias="pause_icon">img/pause.png</file>
+        <file alias="stop_icon">img/stop.png</file>
+        <file alias="exit_icon">img/exit.png</file>
+        <file alias="english_icon">img/english.png</file>
+        <file alias="french_icon">img/french.png</file>
+        <file alias="japanese_icon">img/japanese.png</file>
+        <file alias="about_icon">img/about.png</file>
+        <file alias="info_icon">img/info.png</file>
+        <file alias="warn_icon">img/warning.png</file>
+        <file alias="err_icon">img/error.png</file>
+        <file alias="down_icon">img/down.png</file>
+        <file alias="settings">img/settings.png</file>
+        <file alias="none_icon">img/none.png</file>
+        <file alias="new">img/new.png</file>
+        <file alias="plugin">img/plug.png</file>
+        <file alias="app_icon">icons/UrgBenri.ico</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file alias="en">i18n/UrgBenri_en.qm</file>
+        <file alias="fr">i18n/UrgBenri_fr.qm</file>
+        <file alias="ja">i18n/UrgBenri_ja.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/ConnectorPluginManager">
+        <file alias="add_icon">img/add.png</file>
+        <file alias="plug_icon">img/connector.png</file>
+    </qresource>
+</RCC>
