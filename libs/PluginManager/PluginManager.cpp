@@ -65,8 +65,6 @@ PluginManager::~PluginManager()
 
 void PluginManager::loadPlugins(const QString &pluginPath)
 {
-    qDebug() << "PluginManager::loadPlugins";
-
     QDir pluginsDir(pluginPath);
     QStringList filters;
 
@@ -250,8 +248,6 @@ GeneralPluginInterface *PluginManager::getPlugin(const QString &id)
 
 bool PluginManager::loadPlugin(const QString &filename)
 {
-    qDebug() << "PluginManager::loadPlugin" << filename;
-
     try{
         QPluginLoader *loader = new QPluginLoader(filename, this);
         if(loader){

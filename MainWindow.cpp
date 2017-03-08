@@ -47,7 +47,6 @@ MainWindow::MainWindow(QWidget* parent)
     , m_settings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/Settings.ini", QSettings::IniFormat)
 {
     ui->setupUi(this);
-    qDebug() << "UI initialised";
 
     m_viewerManager = ui->viewerWidget;
     m_connectorManager = ui->deviceBox;
@@ -561,7 +560,6 @@ void MainWindow::changeEvent(QEvent* e)
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
-    qDebug() << "MainWindow::closeEvent";
     saveState();
     foreach (SystemPluginInterface *spi, m_systems) {
          spi->finalize();
@@ -656,7 +654,6 @@ void MainWindow::pluginRemoved(const QString &id)
 
 void MainWindow::updateControls(const QString &id)
 {
-    qDebug() << "MainWindow::updateControls";
     ConnectorState state = m_connectorManager->connectorState(id);
     updatePlayControls(state.connected,
                        state.started,
@@ -693,7 +690,6 @@ void MainWindow::clearViewer(const QString &id)
 
 MainWindow::~MainWindow()
 {
-    qDebug() << "MainWindow::~MainWindow";
     delete ui;
 }
 
