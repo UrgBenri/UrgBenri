@@ -355,42 +355,42 @@ looked in:</source>
 <context>
     <name>PluginManager</name>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="205"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="204"/>
         <source>Icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="206"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="205"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="207"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="206"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="208"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="207"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="209"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="208"/>
         <source>Contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="210"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="209"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="288"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="287"/>
         <source>Error loading plugin:%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../libs/PluginManager/PluginManager.cpp" line="289"/>
+        <location filename="../libs/PluginManager/PluginManager.cpp" line="288"/>
         <source>Error:%1</source>
         <translation type="unfinished"></translation>
     </message>

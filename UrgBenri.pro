@@ -53,3 +53,9 @@ win32 {
     QMAKE_LFLAGS_WINDOWS += /MANIFESTUAC:level=\'asInvoker\'
 }
 
+macx {
+    APPBUNDLE = $${DESTDIR}/$${TARGET}.app
+    plugins.files = $$files($${DESTDIR}/plugins/*.dylib)
+    plugins.path = PlugIns
+    QMAKE_BUNDLE_DATA += plugins
+}

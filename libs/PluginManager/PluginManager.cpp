@@ -41,7 +41,6 @@ PluginManager::PluginManager(QObject *parent)
 #endif
 #ifdef Q_OS_OSX
     m_pluginPaths << QApplication::applicationDirPath()+"/../../PlugIns";
-    qCritical() << QApplication::applicationDirPath()+"/../../PlugIns";
 #endif
     m_pluginPaths << QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)+"/plugins";
 

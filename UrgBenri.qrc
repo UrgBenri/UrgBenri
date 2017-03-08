@@ -19,9 +19,11 @@
         <file alias="plugin">img/plug.png</file>
         <file alias="app_icon">icons/UrgBenri.ico</file>
     </qresource>
+    <!--
     <qresource prefix="/translations">
         <file alias="en">i18n/UrgBenri_en.qm</file>
         <file alias="fr">i18n/UrgBenri_fr.qm</file>
         <file alias="ja">i18n/UrgBenri_ja.qm</file>
     </qresource>
+    -->
 </RCC>
