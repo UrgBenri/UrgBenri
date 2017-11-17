@@ -48,11 +48,15 @@ ViewerPluginManager::ViewerPluginManager(QWidget* parent)
     addCornerLabel(m_rightCornelLabel, Qt::BottomRightCorner);
     addCornerLabel(m_leftCornelLabel, Qt::BottomLeftCorner);
 
+    m_leftCornelLabel->setMinimumWidth(130);
+
     setLeftLabelVisible(true);
 
     m_receptionTimeAvg.setAverageValue(25);
 
-    setLeftLabelText(tr("Rate: %1ms | %2fps").arg(0).arg(0));
+    setLeftLabelText(tr("Rate: %1ms | %2fps")
+                     .arg(int(0), 3, 10, QChar('0'))
+                     .arg(int(0), 3, 10, QChar('0')));
 }
 
 ViewerPluginManager::~ViewerPluginManager()
@@ -65,7 +69,8 @@ void ViewerPluginManager::loadViewers(const QVector<ViewerPluginInterface *> &vi
     foreach (ViewerPluginInterface *plugin, viewers){
         ViewerPluginInterface *viewer = qobject_cast<ViewerPluginInterface *>(plugin->createPlugin(this));
         if(viewer){
-            viewer->onLoad(manager);
+            viewer->onLoad(manager);            
+            viewer->setReceptionRate(0);
             connect(viewer, SIGNAL(error(const QString&,const QString&)),
                     this, SIGNAL(error(const QString&,const QString&)));
             connect(viewer, SIGNAL(information(const QString&,const QString&)),
@@ -163,23 +168,32 @@ void ViewerPluginManager::clear()
             viewer->clear();
         }
     }
-    setLeftLabelText(tr("Rate: %1ms | %2fps").arg(0).arg(0));
+    setLeftLabelText(tr("Rate: %1ms | %2fps")
+                     .arg(int(0), 3, 10, QChar('0'))
+                     .arg(int(0), 3, 10, QChar('0')));
 }
 
 void ViewerPluginManager::addMeasurementData(const QString &id
                                              , const PluginDataStructure &data)
 {
+    m_receptionTimeAvg.push_back(m_receptionTimer.restart());
+    int avg = m_receptionTimeAvg.average();
+    if (avg > 0) {
+        setLeftLabelText(tr("Rate: %1ms | %2fps")
+                         .arg(avg, 3, 10, QChar('0'))
+                         .arg(1000 / (m_receptionTimeAvg.average()), 3, 10, QChar('0'))
+                         );
+    }
+    else{
+        setLeftLabelText(tr("Rate: %1ms | %2fps")
+                         .arg(int(0), 3, 10, QChar('0'))
+                         .arg(int(0), 3, 10, QChar('0')));
+    }
     foreach (ViewerPluginInterface *viewer, m_viewers) {
         if(viewer->isActive()){
             viewer->addMeasurementData(id, data);
+            viewer->setReceptionRate(avg);
         }
-    }
-    m_receptionTimeAvg.push_back(m_receptionTimer.restart());
-    if (m_receptionTimeAvg.average() > 0) {
-        setLeftLabelText(tr("Rate: %1ms | %2fps")
-                         .arg(m_receptionTimeAvg.average())
-                         .arg(1000 / (m_receptionTimeAvg.average()))
-                         );
     }
 }
 
